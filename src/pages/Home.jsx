@@ -27,7 +27,7 @@ const Home = () => {
           alt=""
         />
         <div className="home__inputContainer">
-          <Search hideButtons={true} />
+          <Search hideButtons={false} />
         </div>
       </div>
     </div>
