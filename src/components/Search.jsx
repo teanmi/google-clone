@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Search.css";
 import SearchIcon from "@material-ui/icons/Search";
 import MicIcon from "@material-ui/icons/Mic";
@@ -12,10 +12,12 @@ const Search = ({ hideButtons = false }) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    console.log(input)
+  }, [input])
+
   const search = (e) => {
     e.preventDefault();
-    console.log(input);
-
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
       term: input,
