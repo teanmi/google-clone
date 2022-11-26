@@ -25,3 +25,4 @@ yarn-error.log*
 
 # api key
 /src/keys.js
+firebase-debug.log
