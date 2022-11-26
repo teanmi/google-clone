@@ -14,6 +14,7 @@ const useGoogleSearch = (term) => {
         .then((response) => response.json())
         .then((result) => {
           setData(result);
+          console.log(result);
         });
     };
 

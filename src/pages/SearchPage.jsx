@@ -12,11 +12,9 @@ import RoomIcon from "@material-ui/icons/Room";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 const Searchpage = () => {
-  const [{ term }, ] = useStateValue();
+  const [{ term }, dispatch] = useStateValue();
 
-  const { data } = useGoogleSearch(term)
-
-  console.log(data);
+  const { data } = useGoogleSearch(term);
 
   return (
     <div className="searchPage">
@@ -74,7 +72,7 @@ const Searchpage = () => {
             {data?.searchInformation.formattedSearchTime} seconds) for {term}
           </p>
 
-          {data.items.map((item, index) => (
+          {data?.items.map((item, index) => (
             <div className="searchPage__result" key={index}>
               <a href={item.link}>
                 
