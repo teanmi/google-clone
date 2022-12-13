@@ -72,7 +72,7 @@ const Searchpage = () => {
             {data?.searchInformation.formattedSearchTime} seconds) for {term}
           </p>
 
-          {data?.items.map((item, index) => (
+          {data?.items ? data?.items.map((item, index) => (
             <div className="searchPage__result" key={index}>
               <a href={item.link}>
                 
@@ -84,7 +84,9 @@ const Searchpage = () => {
               </a>
               <p className="searchPage__resultSnippet">{item.snippet}</p>
             </div>
-          ))}
+          )) :
+          "No results"
+          }
         </div>
       )}
     </div>
